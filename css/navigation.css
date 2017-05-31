@@ -1,0 +1,251 @@
+.navContainer {
+    position: fixed;
+    width:23%;
+    height:100vh;
+    background: #f3f3f3;
+    padding:0;
+
+}
+
+@keyframes openWide {
+    from {width:0px; opacity:0}
+}
+
+@keyframes move {
+    from {margin-left:-100px; width:0px}
+}
+
+@keyframes closeMove {
+    from {margin-left:0px;}
+    to {margin-left:-100px; width:0px}
+}
+
+.closeMove {
+    animation:closeMove 0.5;
+}
+
+.navFlex {
+    display:flex;
+    height:100vh;
+    width:100%;
+    flex-direction:column;
+    padding-left:74px;
+    justify-content:space-between;
+}
+
+.logoContainer {
+    padding-top:30px;
+}
+
+.navMenu {
+    position:relative;
+    list-style-type: none;
+    padding:0;
+    margin-bottom:40px;
+    display:flex;
+    flex-direction:column;
+}
+
+.mobile {
+    display:none;
+}
+
+.navMenu a {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 3.67;
+    color: #b2b2c1;
+    margin-bottom:-6px;
+    text-decoration: none;
+    width:100px;
+    transition: 0.5s ease;
+    transition-delay: 0.1s;
+    cursor: pointer;
+}
+
+.navMenu a:hover {
+    color: #ff5400;
+}
+
+.activeNav {
+    color: #ff5400;
+}
+
+.laserShape {
+    width:100%;
+    height:3px;
+    background: #ff5400;
+
+    animation: openWide 1.5s ;
+    transition: top 0.2s ease-out;
+    position:absolute;
+    left:-74px;
+    top:38px;
+    pointer-events: none;
+}
+
+
+/*dataShapes below*/
+
+.dataShapeContainer {
+    position: absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    padding-top:100px;
+}
+
+.dataShape {
+    position:absolute;
+    background: #212a3c;
+    animation: openWide 1s;
+    /*transition: 2s ease;*/
+    /*cubic-bezier(.75,.36,.35,.91)*/
+}
+
+.a {
+    left:100px;
+}
+
+.move {
+    animation: move 1.5s;
+}
+
+@media (max-width: 715px) {
+    .dataShapeContainer {
+        display:none;
+    }
+
+    .navContainer {
+        width: 100vw;
+        height: 84px;
+        z-index:3;
+    }
+
+    .navFlexOpen {
+        background: white;
+    }
+
+    .navFlex {
+        top:20px;
+        flex-direction:row;
+
+        width:100vw;
+        padding-left:18px;
+        padding-right: 18px;
+        height:90px;
+        background: #f3f3f3;
+        transition:all 1.5s ease;
+
+    }
+
+    .navShadowMobile {
+        box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .logo {
+        width:95px;
+        transition:all 1.5s ease;
+    }
+
+    .logoOpacityNone {
+        opacity:0;
+    }
+
+    .mobileMenuBurger {
+        position: absolute;
+        top:45px;
+        right:18px;
+        width: 18px;
+        height: 12px;
+    }
+
+    .burgerTop{
+        top:0;
+        height: 2px;
+        width:100%;
+        position: absolute;
+        background: #121229;
+        transition:all 0.5s ease;
+    }
+
+    .burgerTopOpen {
+        transform:rotate(-45deg);
+        top:5px;
+    }
+
+    .burgerMiddle {
+        top:5px;
+        height: 2px;
+        width:100%;
+        position: absolute;
+        background: #121229;
+        transition:all 0.5s ease;
+    }
+
+    .burgerMiddleOpen {
+        transform:rotate(45deg);
+    }
+
+    .burgerBottom {
+        bottom:0;
+        height: 2px;
+        width:100%;
+        position: absolute;
+        background: #121229;
+        transition:all 1s ease;
+    }
+
+    .burgerBottomOpen {
+        bottom: -150px
+    }
+
+    .desktop {
+        display:none;
+    }
+
+    .mobile {
+        display:flex;
+        width:100vw;
+        height:100vh;
+        position:fixed;
+        top:0;
+        padding:39% 16% 39% 16%;
+        background: white;
+        z-index:2;
+        left:-500px;
+        transition:all 1.5s ease;
+    }
+
+    .mobileOpen {
+        left:0;
+    }
+
+    .mobile a {
+        font-size:16px;
+    }
+
+    .mobile a:active {
+        color:#ff5400;
+    }
+
+    .mobileDataShapeContainer {
+        position:absolute;
+        width:100vw;
+        height:90%;
+        top:5%;
+        right:0;
+    }
+
+    .laserShape {
+        display:none;
+    }
+
+    .dataShapeContainer {
+        width:100%;
+        height:300%;
+        overflow:hidden;
+        padding-top:100px;
+    }
+
+}
